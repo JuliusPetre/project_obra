@@ -1,0 +1,137 @@
+<style>
+    html {
+      height: 100%;
+  }
+  
+  body{
+      height: 100%;
+      background: rgb(68,131,209);
+      background: linear-gradient(0deg, rgba(68,131,209,1) 0%, rgba(9,9,121,1) 100%, rgba(0,212,255,1) 100%);
+  }
+  
+  .zoom {
+      transition: transform .2s;
+  }
+  .zoom:hover {
+      transform: scale(1.5);
+      z-index: 5;
+      cursor: pointer;
+  }
+  
+  .card.zoom {
+      height: auto;
+  }
+  
+  .card {
+      margin: 30px;
+      margin-bottom: 20px;
+      height: 598px;
+      box-shadow: 7px 10px 12px -3px rgba(0,0,0,0.38);
+      -webkit-box-shadow: 7px 10px 12px -3px rgba(0,0,0,0.38);
+      -moz-box-shadow: 7px 10px 12px -3px rgba(0,0,0,0.38);
+      border-radius: 20px;
+  }
+  .form-label-divider {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 15px 0;
+  }
+  .form-divider {
+      border: 1px solid rgba(0, 0, 0, 0.178);
+      height: .5px;
+      width: 65%;
+  }
+  .form-img-holder {
+      background-color: red;
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+      height: 100%;
+  }
+  .form-header {
+      font-family: 'Roboto-Black', sans-serif;
+  
+  }
+  .btn-container {
+      position: relative;
+      bottom: calc(100% - 548px);
+  }
+  
+  .btn-round {
+      border-radius: 25px;
+  }
+  
+  .btn-blue {
+      background-color: #4483d1;
+      font-family: 'Roboto-Black', sans-serif;
+      color: white;
+      text-transform: uppercase;
+  }
+  
+  .btn-fade-blue {
+      background-color: #cdc7ff;
+      font-family: 'Roboto-Black', sans-serif;
+      color: white;
+      text-transform: uppercase;
+  }
+  
+  .badge-holder {
+      width: 90%;
+      height: auto;
+  }
+  
+  .tab {
+      display: none;
+  }
+  
+  /* Make circles that indicate the steps of the form: */
+  .step {
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbbbbb;
+      border: none;
+      border-radius: 50%;
+      display: inline-block;
+      opacity: 0.5;
+    }
+    
+    /* Mark the active step: */
+    .step.active {
+      opacity: 1;
+    }
+    
+    /* Mark the steps that are finished and valid: */
+    .step.finish {
+      background-color: #04AA6D;
+    }
+  
+    .paginator {
+      text-align: center;
+      margin-top: 40px;
+      background-color: transparent;
+    }
+  
+    @media only screen and (max-width: 770px) {
+      .card {
+          height: 935px;
+      }
+  
+      .btn-container {
+          position: relative;
+          bottom: calc(100% - 828px);
+      }
+  
+      .form-img-holder {
+          display: none;
+      }
+  
+      .form-sm-img-holder {
+          background-color: red;
+          transition: transform .2s;
+          height: 60px;
+          border-top-left-radius: 20px;
+          border-top-right-radius: 20px;
+      }
+    }
+  </style>

@@ -1,0 +1,83 @@
+<script>
+    var currBusID = "";
+    var currRevID = "";
+    function populateTable(data){
+      console.log("populate table");
+      var table = document.getElementById("tblBusiness");
+      var businessID = ""
+      var businessName = ""
+      var category = ""
+      var email = ""
+      var mobile = ""
+      for(var i = 0; i < data.length; i++) {
+        var trow = table.insertRow(0);
+        var td1 = trow.insertCell(0);
+        var td2 = trow.insertCell(1);
+        td1.innerHTML = data[i].businessName;
+        td2.innerHTML = "<span class='badge rounded-pill badge-success'>" + data[i].status + "</span>";
+  
+        currBusID = data[i].bID;
+        businessID = data[i].bID;
+        businessName = data[i].businessName;
+        category = data[i].category;
+        email = data[i].email;
+        mobile = data[i].mobile;
+      }
+  
+      document.getElementById("info-business-name").value = businessName;
+      document.getElementById("info-category").value = category;
+      document.getElementById("info-email").value = email;
+      document.getElementById("info-mobile").value = mobile;
+  
+      google.script.run.withSuccessHandler(populateBusinessDetails).getRegulatoryCompliance(businessID);
+      
+      function populateBusinessDetails(data) {
+        document.getElementById("info-mayorspermit").href = "https://drive.google.com/uc?export=view&id=" + data.mayorsPermit;
+      }
+    }
+  
+    function approved() {
+      console.log("CBID: " + currBusID);
+      google.script.run.withSuccessHandler(approveFeedback).approveBusinessRegistration(currBusID);
+      function approveFeedback(data){
+        console.log(data)
+      }
+    }
+  
+    function populateReviews(data) {
+      var table = document.getElementById("tblReviews");
+      var reviewerName = "";
+      var reviewerEmail = "";
+      var reviewType = "";
+      var reviewAttachments = "";
+      var reviewDescription = "";
+      for(var i = 0; i < data.length; i++) {
+        var trow = table.insertRow(0);
+        var td1 = trow.insertCell(0);
+        var td2 = trow.insertCell(1);
+        td1.innerHTML = data[i].reviewType;
+        td2.innerHTML = "<span class='badge rounded-pill badge-success'>" + data[i].validated + "</span>";
+  
+        currRevID = data[i].businessID;
+        reviewerName = data[i].reviewerName;
+        reviewerEmail = data[i].email;
+        reviewType = data[i].reviewType;
+        reviewAttachments = data[i].attachments;
+        reviewDescription = data[i].reviewDescription;
+      }
+  
+      document.getElementById("info-reviewer-name").value = reviewerName;
+      document.getElementById("info-reviewer-email").value = reviewerEmail;
+      document.getElementById("info-review-type").value = reviewType;
+      document.getElementById("info-review-attachment").href = "https://drive.google.com/uc?export=view&id=" + reviewAttachments;
+      document.getElementById("info-review-description").value = reviewDescription;
+    }
+  
+    function validate() {
+      console.log("CRID: " + currRevID);
+      google.script.run.withSuccessHandler(validateFeedback).verifyReview(currRevID);
+      function validateFeedback(data){
+        console.log(data)
+      }
+    }
+  </script>

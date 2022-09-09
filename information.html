@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.css"
+      rel="stylesheet"
+    />
+    <?!= include("forms-style-css"); ?>
+    <title>OBRA | INFORMATION</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5">
+          <div class="card">
+            <!-- Tabs navs -->
+            <ul class="nav nav-tabs nav-fill mb-3" id="ex1" role="tablist">
+              <li class="nav-item" role="presentation">
+                <a
+                  class="nav-link active"
+                  id="ex2-tab-1"
+                  data-mdb-toggle="tab"
+                  href="#ex2-tabs-1"
+                  role="tab"
+                  aria-controls="ex2-tabs-1"
+                  aria-selected="true"
+                  onclick="hideTab('businessTab')"
+                  >REVIEW BUSINESS</a
+                >
+              </li>
+              <li class="nav-item" role="presentation">
+                <a
+                  class="nav-link"
+                  id="ex2-tab-2"
+                  data-mdb-toggle="tab"
+                  href="#ex2-tabs-2"
+                  role="tab"
+                  aria-controls="ex2-tabs-2"
+                  aria-selected="false"
+                  onclick="hideTab('complaintsTab')"
+                  >REVIEWS</a
+                >
+              </li>
+            </ul>
+            <!-- Tabs navs -->
+            <div class="card-body" style="padding-top: 0">
+              <div class="tab-content">
+                <!-- REGISTERED BUSINESSES -->
+                <div
+                  class="tab-pane fade show active"
+                  id="ex2-tabs-1"
+                  role="tabpanel"
+                  aria-labelledby="ex2-tab-1"
+                >
+                  <div class="col-md-12">
+                    <div class="form-label-divider">
+                      <h6>REGISTERED BUSINESSES</h6>
+                      <div class="form-divider"></div>
+                    </div>
+                  </div>
+
+                  <!-- REGISTERED BUSINESS TABLE -->
+                  <div class="col-md-12">
+                    <table class="table" id="tblBusiness">
+                        <tbody>
+                            <!--
+                            <tr>
+                                <td>GNARLY</td>
+                                <td><span class="badge rounded-pill badge-success"
+                                    >Approved</span
+                                  ></td>
+                            </tr>
+                            -->
+                        </tbody>
+                    </table>
+                  </div>
+                  <!-- END REGISTERED BUSINESS TABLE -->
+                </div>
+
+                <!-- COMPLAINTS LIST -->
+                <div
+                  class="tab-pane fade"
+                  id="ex2-tabs-2"
+                  role="tabpanel"
+                  aria-labelledby="ex2-tab-2"
+                >
+                  <div class="col-md-12">
+                    <div class="form-label-divider">
+                      <h6>REVIEWS LIST</h6>
+                      <div class="form-divider"></div>
+                    </div>
+                  </div>
+
+                  <!-- REVIEWS TABLE -->
+                  <div class="col-md-12">
+                    <table class="table" id="tblReviews">
+                        <tbody>
+                            <!--
+                            <tr>
+                                <td>GNARLY</td>
+                                <td><span class="badge rounded-pill badge-success"
+                                    >Approved</span
+                                  ></td>
+                            </tr>
+                            -->
+                        </tbody>
+                    </table>
+                  </div>
+                  <!-- END REVIEWS TABLE -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-7">
+          <div class="card">
+            <div class="card-body">
+                <!-- BUSINESS INFORMATION -->
+                <div class="businessTab" id="businessTab">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-label-divider">
+                                <h6>INFORMATION</h6>
+                                <div class="form-divider"></div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img
+                            src="http://drive.google.com/uc?export=view&id=1gZn9CCRtch_XicT-Di7fjGal0bkWDxQU"
+                            alt=""
+                            class="badge-holder"
+                          />
+                        </div>
+                        <div class="col-md-9">
+                        <div class="row">
+                            <div class="col-md-6">
+                            <div class="form-outline mb-4">
+                                <input
+                                type="text"
+                                name=""
+                                id="info-business-name"
+                                value=""
+                                disabled
+                                class="form-control select-input"
+                                />
+                                <label for="" class="form-label select-label"
+                                ></label
+                                >
+                            </div>
+                            </div>
+                            <div class="col-md-6">
+                            <div class="form-outline mb-4">
+                                <input
+                                type="text"
+                                name=""
+                                id="info-category"
+                                value=""
+                                disabled
+                                class="form-control select-input"
+                                />
+                                <label for="" class="form-label select-label"
+                                ></label
+                                >
+                            </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-outline mb-4">
+                                    <input
+                                    type="email"
+                                    name=""
+                                    id="info-email"
+                                    value=""
+                                    disabled
+                                    class="form-control select-input"
+                                    />
+                                    <label for="" class="form-label select-label"
+                                    ></label
+                                    >
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-outline mb-4">
+                                    <input
+                                    type="number"
+                                    name=""
+                                    id="info-mobile"
+                                    value=""
+                                    disabled
+                                    class="form-control select-input"
+                                    />
+                                    <label for="" class="form-label select-label"
+                                    ></label
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+        
+                    <div class="row">
+                        <div class="col-md-12">
+                        <div class="form-label-divider">
+                            <h6>REGULATORY COMPLIANCE</h6>
+                            <div class="form-divider"></div>
+                        </div>
+                        </div>
+                    </div>
+        
+                    <div class="row">
+                        <div class="col-md-12">
+                        <div class="check-list-view">
+                            <div class="form-check">
+                            <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckDefault"
+                            />
+                            <label class="form-check-label" for="flexCheckDefault"
+                                >Mayor's Permit</label
+                            >
+                            </div>
+                            <small
+                            style="
+                                margin-left: 10px;
+                                margin-top: 2px;
+                                margin-bottom: 2px;
+                            "
+                            >
+                            <a href="#" id="info-mayorspermit" >View document</a>
+                            </small>
+                        </div>
+                        </div>
+                    </div>
+        
+                    <div class="d-grid gap-2 mt-4 btn-container">
+                        <button
+                        type="button"
+                        id="submit"
+                        class="btn btn-blue btn-round"
+                        onclick="approved()"
+                        >
+                        Approved
+                        </button>
+                    </div>
+                </div>
+
+                <!-- COMPLAINTS DESCRIPTION -->
+                <div class="complaintsTab" id="complaintsTab" style="display: none;">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-label-divider">
+                                <h6>REVIEW DETAILS</h6>
+                                <div class="form-divider"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-outline mb-4">
+                                <input
+                                  type="text"
+                                  name=""
+                                  id="info-reviewer-name"
+                                  value=""
+                                  class="form-control"
+                                  disabled
+                                />
+                                <label for="" class="form-label select-label"
+                                  ></label
+                                >
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-outline mb-4">
+                                <input
+                                  type="text"
+                                  name=""
+                                  id="info-reviewer-email"
+                                  value=""
+                                  class="form-control"
+                                  disabled
+                                />
+                                <label for="" class="form-label select-label"
+                                  ></label
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-outline mb-4">
+                                <input
+                                  type="text"
+                                  name=""
+                                  id="info-review-type"
+                                  value=""
+                                  class="form-control"
+                                  disabled
+                                />
+                                <label for="" class="form-label select-label"
+                                  ></label
+                                >
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <a href="#" id="info-review-attachment">View Attachment</a>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-outline">
+                                <textarea class="form-control" id="info-review-description" rows="4" disabled data-mdb-showcounter="true" maxlength="220"></textarea>
+                                <label class="form-label" for="textAreaExample"></label>
+                                <div class="form-helper"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-grid gap-2 mt-4 btn-container">
+                        <button
+                        type="button"
+                        id="submit"
+                        class="btn btn-blue btn-round"
+                        onclick="validate()"
+                        >
+                        Verify Review
+                        </button>
+                    </div>
+                </div>
+                
+            </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"
+  ></script>
+  <!-- MDB -->
+  <script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.js"
+  ></script>
+  <?!= include("scripts-js"); ?>
+  <?!= include("information-js"); ?>
+</html>
